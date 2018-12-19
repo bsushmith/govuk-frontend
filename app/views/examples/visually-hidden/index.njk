@@ -1,0 +1,76 @@
+{% extends "layout.njk" %}
+
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    "href": "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl">Visually hidden content</h1>
+
+<h2 class="govuk-heading-m">Within text</h2>
+
+<p class="govuk-body">
+  I am a paragraph<span class="govuk-visually-hidden"> with visually hidden text at the end</span>.
+</p>
+
+<p class="govuk-body">
+  I <span class="govuk-visually-hidden"> have visually hidden text in the middle and I</span> am a paragraph.
+</p>
+
+<p class="govuk-body">
+  <span class="govuk-visually-hidden">I have visually hidden text in the middle and </span>I am a paragraph.
+</p>
+
+<!-- Paragraphs -->
+
+<h2 class="govuk-heading-m">As a paragraph</h2>
+
+<p class="govuk-body">
+  I am a visible paragraph.
+</p>
+
+<p class="govuk-body govuk-visually-hidden">
+  I am a visually hidden paragraph!
+</p>
+
+<p class="govuk-body">
+  I am another visible paragraph!
+</p>
+
+<!-- Links -->
+
+<h2 class="govuk-heading-m">Inside a link</h2>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link">I am a link <span class="govuk-visually-hidden">that contains visually hidden text at the end</span></a>
+</p>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link">I <span class="govuk-visually-hidden">contain visually hidden text in my middle and I</span> am a link</a>
+</p>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link"><span class="govuk-visually-hidden">I contain visually hidden text at my start and </span>I am a link</a>
+</p>
+
+<!-- Buttons -->
+
+<h2 class="govuk-heading-m">Inside a button</h2>
+
+<p class="govuk-body">
+  <button type="button" class="govuk-button">I am a button <span class="govuk-visually-hidden">that contains visually hidden text at the end</span></button>
+</p>
+
+<p class="govuk-body">
+  <button type="button" class="govuk-button">I <span class="govuk-visually-hidden">contain visually hidden text in my middle and I</span> am a button</button>
+</p>
+
+<p class="govuk-body">
+  <button type="button" class="govuk-button"><span class="govuk-visually-hidden">I contain visually hidden text at my start and </span>I am a button</button>
+</p>
+
+{% endblock %}
